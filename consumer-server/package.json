@@ -1,14 +1,14 @@
 {
-  "name": "consumer-server",
+  "name": "producer-server",
   "version": "1.0.0",
-  "main": "consumer-server.js",
+  "description": "",
+  "main": "producer-server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "body-parser": "^1.20.3",
     "express": "^4.21.1",
