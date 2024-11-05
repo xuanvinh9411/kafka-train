@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const { connectProducer, disconnectProducer } = require('./config/kafka');
-const messageRoutes = require('./routes/messageRoutes');
+const messageRoutes = require('./routers/messageRoutes');
 const { setupProducerEvents } = require('./config/events');
 const app = express();
 app.use(bodyParser.json());
@@ -21,7 +21,7 @@ const startServer = async () => {
     await connectProducer();
     
     // Setup producer events
-    setupProducerEvents();
+    // await  setupProducerEvents();
     
     const PORT = process.env.PORT || 3000;
     app.listen(PORT, () => {

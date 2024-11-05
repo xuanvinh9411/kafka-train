@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const { connectConsumer, disconnectConsumer } = require('./config/kafka');
 const messageRoutes = require('./routes/messageRoutes');
 const { setupConsumerEvents } = require('./config/events');
-
+const { startConsumer } = require('./controllers/messageController');
 const app = express();
 app.use(bodyParser.json());
 
@@ -22,8 +22,8 @@ const startServer = async () => {
     await connectConsumer();
     
     // Setup consumer events
-    setupConsumerEvents();
-    setupConsumerEvents();
+    // setupConsumerEvents();
+
     // Bắt đầu xử lý messages
     await startConsumer();
     

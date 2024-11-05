@@ -48,9 +48,19 @@ const getStats = (req, res) => {
     res.status(500).json({ success: false, error: error.message });
   }
 };
+const startConsumer = async ( ) => {
+  try {
+    await messageService.startConsumer();
+    console.log('Consumer started successfully');
+
+  } catch (error) {
+    console.error('Error in startConsumer:', error);
+  }
+};
 
 module.exports = {
   getAllMessages,
   getMessagesByTopic,
-  getStats
+  getStats,
+  startConsumer
 };
