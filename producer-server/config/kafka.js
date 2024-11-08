@@ -1,13 +1,13 @@
-const { Kafka } = require('kafkajs');
+const { Kafka , Partitioners } = require('kafkajs');
 
 const kafka = new Kafka({
   clientId: 'producer-app',
-  brokers: ['localhost:29092']
+  brokers: ['localhost:29092'],
 });
 
 const producer = kafka.producer({
-    allowAutoTopicCreation: true,
-    transactionTimeout: 30000
+  createPartitioner: Partitioners.LegacyPartitioner,
+  allowAutoTopicCreation: true
   });
 
 const connectProducer = async () => {

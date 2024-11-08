@@ -34,7 +34,7 @@ const getMessageStats = () => {
 const startConsumer = async () => {
   try {
     // Subscribe to all topics starting with 'test-'
-    await consumer.subscribe({ topics: ['test-topic'], fromBeginning: true });
+    await consumer.subscribe({ topics: ['topicdev-1'], fromBeginning: true });
 
     await consumer.run({
       eachMessage: async ({ topic, partition, message }) => {

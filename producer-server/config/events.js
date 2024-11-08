@@ -17,10 +17,11 @@ const setupProducerEvents = () => {
     // Có thể thêm logic notify monitoring system
   });
 
-  producer.on('producer.network.error', (error) => {
-    console.error('Producer network error:', error);
-    // Có thể thêm logic retry connection
-  });
+  // producer.on('producer.network.error', (error) => {
+  //   console.error('Producer network error:', error);
+  //   // Có thể thêm logic retry connection
+  // });
+
 };
 
 // Event handlers riêng biệt
